@@ -1,5 +1,5 @@
 import './sass/main.scss';
-
+import 'lazysizes';
 import images from "./gallery-items";
 
 const galleryContainer = document.querySelector('.js-gallery ');
@@ -26,11 +26,13 @@ function createMarkupGalleryItems(images) {
     href="${original}"
   >
     <img
-      class="gallery__image"
-      src="${preview}"
+      class="gallery__image lazyload "
+      
+      data-src="${preview}"
       data-source="${original}"
       data-index="${index}"
       alt="${description}"
+      
     />
   </a>
 </li> `
